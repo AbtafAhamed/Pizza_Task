@@ -8,17 +8,25 @@ const routes = [
   {
     path: "/Menu",
     name: "Menu",
+    meta: { requiresAuth: true },
     component: () => import("layouts/MainLayout.vue"),
     children: [
-      { path: "Home", name: "Home", component: () => import("pages/Home.vue") },
+      {
+        path: "Home",
+        name: "Home",
+        meta: { requiresAuth: true },
+        component: () => import("pages/Home.vue")
+      },
       {
         path: "DisplayItems",
         name: "DisplayItems",
+        meta: { requiresAuth: true },
         component: () => import("pages/DisplayItems.vue")
       },
       {
         path: "OrderStatus",
         name: "OrderStatus",
+        meta: { requiresAuth: true },
         component: () => import("pages/OrderStatus.vue")
       }
     ]
